@@ -1,0 +1,42 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "storybook-ngrx-helper": {
+      "projectType": "library",
+      "root": "projects/storybook-ngrx-helper",
+      "sourceRoot": "projects/storybook-ngrx-helper/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/storybook-ngrx-helper/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/storybook-ngrx-helper/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/storybook-ngrx-helper/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/storybook-ngrx-helper/src/test.ts",
+            "tsConfig": "projects/storybook-ngrx-helper/tsconfig.spec.json",
+            "karmaConfig": "projects/storybook-ngrx-helper/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "storybook-ngrx-helper"
+}
