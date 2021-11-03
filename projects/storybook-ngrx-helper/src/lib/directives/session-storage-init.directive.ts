@@ -2,7 +2,7 @@ import { Directive, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { each } from 'lodash';
 import * as brickJson from 'brick.json';
-import {compress, decompress} from 'lz-string';
+import { compress, decompress } from 'lz-string';
 
 /**
  * A helper directive for a storybook that allows you to set the initial state of the store
@@ -40,7 +40,9 @@ export class SessionStorageInitDirective implements OnChanges {
   }
 
   private compress(obj: any): string {
-    return compress(JSON.stringify(brickJson.compress(obj)));
+    return compress(
+      JSON.stringify(typeof obj === 'object' ? brickJson.compress(obj) : obj)
+    );
   }
 
   ngOnChanges(changes: SimpleChanges) {

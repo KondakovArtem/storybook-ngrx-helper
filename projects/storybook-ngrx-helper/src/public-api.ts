@@ -8,3 +8,4 @@ export * from './lib/directives/router-init.directive';
 export * from './lib/directives/storybook-helper.module';
 export * from './lib/meta-reducers';
 export * from './lib/model';
+export * from './msw/public-api';

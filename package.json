@@ -23,6 +23,7 @@
     "@angular/router": "~11.2.4",
     "@ngrx/store": "^11.1.1",
     "lodash": "^4.17.21",
+    "msw": "0.27.0",
     "rxjs": "~6.6.0",
     "brick.json": "^0.0.6",
     "lz-string": "^1.4.4",
